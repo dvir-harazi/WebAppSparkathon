@@ -15,6 +15,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { QamComponent } from './qam/qam.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MatInputModule } from '@angular/material/input';
     VideoListComponentComponent,
     RatingComponentComponent,
     RecommendationComponentComponent,
-    VideoServiceComponent
+    VideoServiceComponent,
+    QamComponent
   ],
   imports: [
     BrowserModule,

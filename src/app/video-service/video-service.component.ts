@@ -17,7 +17,7 @@ export class VideoServiceComponent {
   constructor(private http: HttpClient) { }
 
   getVideos(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/videos`);
+    return this.http.get(`${this.apiUrl}/calls`);
   }
 
   rateVideo(username: string, videoId: string, ratings: any): Observable<any> {

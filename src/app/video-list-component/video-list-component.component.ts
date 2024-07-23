@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { VideoServiceComponent } from '../video-service/video-service.component';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-video-list-component',
   templateUrl: './video-list-component.component.html',
@@ -9,19 +11,19 @@ export class VideoListComponentComponent {
   videos: any[] = [
     { id: 1, agentName: 'Agent 1', image: '/assets/call.png', 
       description: 'Description of Call 1', segmentId: "e28531b5-7ebd-491f-88c4-6c26bad48d50",
-    time: "01-01-2024 08:49AM", duration: "1:09", incoming: false },
+    time: "01-01-2023 08:49AM", duration: "1:09", incoming: false },
     { id: 2, agentName: 'Agent 2', image: '/assets/call.png', 
       description: 'Description of Call 2', segmentId: "e28531b5-7ebd-491f-88c4-6c26bad48d50",
-    time: "01-02-2024 04:49PM", duration: "2:19", incoming: true },
+    time: "01-02-2023 04:49PM", duration: "3:22", incoming: true },
     { id: 3, agentName: 'Agent 3', image: '/assets/call.png', 
       description: 'Description of Call 3', segmentId: "e28531b5-7ebd-491f-88c4-6c26bad48d50",
-    time: "01-01-2024 08:49AM", duration: "1:09", incoming: false },
+    time: "01-01-2024 08:49AM", duration: "1:33", incoming: false },
     { id: 4, agentName: 'Agent 4', image: '/assets/call.png', 
       description: 'Description of Call 4', segmentId: "e28531b5-7ebd-491f-88c4-6c26bad48d50",
-    time: "01-02-2024 04:49AM", duration: "2:19", incoming: true },
+    time: "01-02-2024 04:49AM", duration: "1:27", incoming: true },
     { id: 5, agentName: 'Agent 5', image: '/assets/call.png', 
       description: 'Description of Call 5', segmentId: "e28531b5-7ebd-491f-88c4-6c26bad48d50",
-    time: "20-01-2024 08:49AM", duration: "1:19", incoming: false },
+    time: "20-01-2024 08:49AM", duration: "1:11", incoming: false },
     { id: 6, agentName: 'Agent 6', image: '/assets/call.png', 
       description: 'Description of Call 6', segmentId: "e28531b5-7ebd-491f-88c4-6c26bad48d50",
     time: "01-03-2024 08:49AM", duration: "4:09", incoming: false },
@@ -41,7 +43,9 @@ export class VideoListComponentComponent {
 
   baseurl = "https://na1.dev.nice-incontact.com/player/#/cxone-player/segments/";
 
-  constructor(private videoService: VideoServiceComponent) { }
+  constructor(private videoService: VideoServiceComponent,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.videoService.getVideos().subscribe(
@@ -51,7 +55,7 @@ export class VideoListComponentComponent {
   }
 
   navigateToExternalLink(link: any) {
-    window.open(this.baseurl+link.segmentId);
+    this.router.navigate(['/qam'], { queryParams: link });
   }
 }
 
