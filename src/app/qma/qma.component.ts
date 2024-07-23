@@ -3,11 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-qam',
-  templateUrl: './qam.component.html',
-  styleUrl: './qam.component.css'
+  selector: 'app-qma',
+  templateUrl: './qma.component.html',
+  styleUrl: './qma.component.css'
 })
-export class QamComponent implements OnInit {
+export class QmaComponent implements OnInit {
   iframeUrl1: SafeResourceUrl | undefined;
   iframeUrl2: SafeResourceUrl | undefined;
   

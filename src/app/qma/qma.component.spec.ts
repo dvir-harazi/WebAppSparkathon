@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { QmaComponent } from './qma.component';
 
-import { QamComponent } from './qam.component';
-
-describe('QamComponent', () => {
-  let component: QamComponent;
-  let fixture: ComponentFixture<QamComponent>;
+describe('QmaComponent', () => {
+  let component: QmaComponent;
+  let fixture: ComponentFixture<QmaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [QamComponent]
+      declarations: [QmaComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(QamComponent);
+    fixture = TestBed.createComponent(QmaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

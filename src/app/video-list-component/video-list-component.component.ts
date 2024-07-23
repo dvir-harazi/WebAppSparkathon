@@ -55,7 +55,7 @@ export class VideoListComponentComponent {
   }
 
   navigateToExternalLink(link: any) {
-    this.router.navigate(['/qam'], { queryParams: link });
+    this.router.navigate(['/qma'], { queryParams: link });
   }
 }
 
