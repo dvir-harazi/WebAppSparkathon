@@ -1,10 +1,11 @@
 <h2>Recommended calls:</h2>
 <div class="video-list">
   <div class="video-card" *ngFor="let video of videos">
-    <img src={{video.image}} class="image"/>
+    <img [src]=video.image class="image"/>
     <h3>Agent: {{ video.agentName }}</h3>
     <p>{{ video.description }}</p>
     <p>{{ video.time }}</p>
+    <p>Call Duration: {{ video.duration }}</p>
     <img class="incoming" [src]="video.incoming ? '/assets/incoming.jpg' : '/assets/outgoing.jpg'" />
     <p></p>
     <button (click)="navigateToExternalLink(video)">Play Call</button>
