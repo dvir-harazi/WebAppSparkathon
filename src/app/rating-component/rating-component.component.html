@@ -1,0 +1,8 @@
+<h2>Rate Video</h2>
+<form (ngSubmit)="onSubmit()">
+  <div *ngFor="let classification of classifications">
+    <label> {{ classification }} :</label>
+    <input type="number" [(ngModel)]="ratings[classification]" name="{{ classification }}" min="1" max="5">
+  </div>
+  <button type="submit">Submit Rating</button>
+</form>

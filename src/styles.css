@@ -1,0 +1,36 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.sidenav-container {
+  height: 100%;
+}
+
+.mat-toolbar {
+  background: #1976d2;
+  color: white;
+}
+
+.mat-nav-list a {
+  font-size: 16px;
+  padding: 10px 16px;
+  color: rgba(0, 0, 0, 0.87);
+  text-decoration: none;
+  display: block;
+  border-radius: 4px;
+}
+
+.mat-nav-list a:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.mat-nav-list a.active {
+  background: #1976d2;
+  color: white;
+}
+
+.content {
+  padding: 16px;
+}

@@ -1,0 +1,7 @@
+<h2>Available Videos</h2>
+<ul>
+  <li *ngFor="let video of videos">
+    {{ video.title }}
+    <button [routerLink]="['/rate', video.id]">Rate</button>
+  </li>
+</ul>

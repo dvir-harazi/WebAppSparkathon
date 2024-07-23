@@ -1,0 +1,7 @@
+{
+  "cxoneComponents": [
+    "@niceltd/cxone-core-components/strings_en_US.json",
+    "@niceltd/cxone-domain-components/strings_en_US.json",
+    "@niceltd/strings_en_US.json"
+  ]
+}
