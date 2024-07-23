@@ -7,18 +7,16 @@ import { VideoServiceComponent } from '../video-service/video-service.component'
 })
 export class VideoListComponentComponent {
   videos: any[] = [
-    { id: 1, agentName: 'Agent 1', image: '/assets/call.png', description: 'Description of Video 1' },
-    { id: 2, agentName: 'Agent 2', image: '/assets/call.png', description: 'Description of Video 2' },
-    { id: 3, agentName: 'Agent 3', image: '/assets/call.png', d: 'Description of Video 3' },
-    { id: 4, agentName: 'Agent 4', image: '/assets/call.png', d: 'Description of Video 4' },
-    { id: 5, agentName: 'Agent 5', image: '/assets/call.png', d: 'Description of Video 5' },
-    { id: 6, agentName: 'Agent 6', image: '/assets/call.png', dscription: 'Description of Video 6' },
-    { id: 7, agentName: 'Agent 7', image: '/assets/call.png', d: 'Description of Video 7' },
-    { id: 8, agentName: 'Agent 8', image: '/assets/call.png', d: 'Description of Video 8' },
-    { id: 9, agentName: 'Agent 9', image: '/assets/call.png', d: 'Description of Video 9' },
-    { id: 10, agentName: 'Agent 10', image: '/assets/call.png', d: 'Description of Video 10' }
+    { id: 1, agentName: 'Agent 1', image: '/assets/call.png', 
+      description: 'Description of Call 1', segmentId: "e28531b5-7ebd-491f-88c4-6c26bad48d50",
+    time: "01-01-2024 08:49AM", duration: "1:09", incoming: false },
+    { id: 2, agentName: 'Agent 2', image: '/assets/call.png', 
+      description: 'Description of Call 2', segmentId: "e28531b5-7ebd-491f-88c4-6c26bad48d50",
+    time: "01-02-2024 04:49AM", duration: "2:19", incoming: true }
   ];
 
+  baseurl = "https://na1.dev.nice-incontact.com/player/#/cxone-player/segments/";
+  
   constructor(private videoService: VideoServiceComponent) { }
 
   ngOnInit() {

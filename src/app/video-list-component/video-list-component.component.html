@@ -1,9 +1,13 @@
-<h2>Available Videos</h2>
+<h2>Recommended calls:</h2>
 <div class="video-list">
   <div class="video-card" *ngFor="let video of videos">
-    <h3>{{ video.agentName }}</h3>
     <img src={{video.image}} class="image"/>
+    <h3>Agent: {{ video.agentName }}</h3>
     <p>{{ video.description }}</p>
-    <button [routerLink]="['/rate', video.id]">Rate</button>
+    <p>{{ video.time }}</p>
+    <img class="incoming" *ngIf="video.incoming" src="/assets/incoming.jpg"/> 
+    <img class="incoming" *ngIf="!video.incoming" src="/assets/outgoing.jpg"/>
+    <p></p>
+    <button [routerLink]="['/rate', video.id]">Play Call</button>
   </div>
 </div>
