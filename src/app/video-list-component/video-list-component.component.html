@@ -8,6 +8,6 @@
     <img class="incoming" *ngIf="video.incoming" src="/assets/incoming.jpg"/> 
     <img class="incoming" *ngIf="!video.incoming" src="/assets/outgoing.jpg"/>
     <p></p>
-    <button [routerLink]="['/rate', video.id]">Play Call</button>
+    <button (click)="navigateToExternalLink(video)">Play Call</button>
   </div>
 </div>
