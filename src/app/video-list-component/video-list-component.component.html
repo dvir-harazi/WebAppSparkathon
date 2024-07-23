@@ -1,7 +1,8 @@
 <h2>Available Videos</h2>
 <div class="video-list">
   <div class="video-card" *ngFor="let video of videos">
-    <h3>{{ video.title }}</h3>
+    <h3>{{ video.agentName }}</h3>
+    <img src={{video.image}} class="image"/>
     <p>{{ video.description }}</p>
     <button [routerLink]="['/rate', video.id]">Rate</button>
   </div>

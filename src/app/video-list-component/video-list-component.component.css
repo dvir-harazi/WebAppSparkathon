@@ -34,3 +34,8 @@
 .video-card button:hover {
   background-color: #0056b3;
 }
+
+.image {
+  width: 120px;
+  height: 80px;
+}
