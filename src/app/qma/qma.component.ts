@@ -25,6 +25,7 @@ export class QmaComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    
     this.route.queryParams.subscribe(params => {
       this.urlWithSegmentId = this.baseurl + params['segmentId'];
       this.iframeUrl1 = this.sanitizer.bypassSecurityTrustResourceUrl(this.urlWithSegmentId);
