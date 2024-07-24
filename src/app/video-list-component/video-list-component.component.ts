@@ -22,7 +22,7 @@ interface Video {
 export class VideoListComponentComponent {
   videos: Video[] = [
     { id: 1, agentName: 'Agent 1', image: '/assets/call.png', 
-      description: 'Description of Call 1', segmentId: "e28531b5-7ebd-491f-88c4-6c26bad48d50",
+      description: 'This is a long description for the card', segmentId: "e28531b5-7ebd-491f-88c4-6c26bad48d50",
     time: "01-01-2023 08:49AM", duration: "21:09", direction: "outgoing", rate: 2 },
     { id: 2, agentName: 'Agent 2', image: '/assets/call.png', 
       description: 'Description of Call 2', segmentId: "e28531b5-7ebd-491f-88c4-6c26bad48d50",
@@ -60,7 +60,7 @@ export class VideoListComponentComponent {
   selectedFilterAttribute: keyof Video = 'agentName';
   showFilters = false;
   imageSrc = '/assets/filter.jpg';
-  
+
   constructor(private videoService: VideoServiceComponent,
     private router: Router
   ) { }
