@@ -19,6 +19,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     RatingComponentComponent,
     RecommendationComponentComponent,
     VideoServiceComponent,
-    QmaComponent
+    QmaComponent,
+    LeaderboardComponent
   ],
   imports: [
     BrowserModule,

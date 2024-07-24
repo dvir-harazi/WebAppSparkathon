@@ -1,25 +1,44 @@
 <h2>Recommended calls:</h2>
-<div class="sort-container">
-  <label for="sort-attribute">Sort by: </label>
-  <select id="sort-attribute" (change)="onSortChange($event)">
+
+<div class="filter-container">
+  <label for="filter-attribute">Filter by: </label>
+  <select id="filter-attribute" (change)="onFilterAttributeChange($event)">
+    <option value="agentName"></option>
     <option value="agentName">Agent Name</option>
     <option value="description">Description</option>
     <option value="time">Time</option>
     <option value="duration">Duration</option>
-    <option value="incoming">Incoming/Outgoing</option>
-    <!-- Add other necessary attributes here -->
+    <option value="direction">Incoming/Outgoing</option>
+    <option value="rate">Rate</option>
+  </select>
+  <label for="filter-text"> Input to filter: </label>
+  <input id="filter-text" type="text" (input)="onFilterTextChange($event)" />
+</div>
+<p></p>
+<div class="sort-container">
+  <label for="sort-attribute">Sort by: </label>
+  <select id="sort-attribute" (change)="onSortChange($event)">
+    <option value="agentName"></option>
+    <option value="agentName">Agent Name</option>
+    <option value="description">Description</option>
+    <option value="duration">Duration</option>
+    <option value="direction">Incoming/Outgoing</option>
+    <option value="rate">Rate</option>
+    <option value="time">Time</option>
   </select>
 </div>
 
 <div class="video-list">
-  <div class="video-card" *ngFor="let video of videos">
+  <div class="video-card" *ngFor="let video of filteredVideos">
     <img [src]=video.image class="image"/>
     <h3>Agent: {{ video.agentName }}</h3>
+    <p>Call rate: {{ video.rate }} 
+      <img class="smile" [src]="video.rate > 5 ? '/assets/happy.jpg' : '/assets/sad.jpg'" />
+    </p>
     <p>{{ video.description }}</p>
     <p>{{ video.time }}</p>
     <p>Call Duration: {{ video.duration }}</p>
-    <img class="incoming" [src]="video.incoming ? '/assets/incoming.jpg' : '/assets/outgoing.jpg'" />
-    <p></p>
+    <img class="incoming" [src]="video.direction === 'incoming' ? '/assets/incoming.jpg' : '/assets/outgoing.jpg'" />
     <button (click)="navigateToExternalLink(video)">Play Call</button>
   </div>
 </div>
