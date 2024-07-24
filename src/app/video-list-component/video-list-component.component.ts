@@ -2,16 +2,27 @@ import { Component, OnInit } from '@angular/core';
 import { VideoServiceComponent } from '../video-service/video-service.component';
 import { Router } from '@angular/router';
 
+interface Video {
+  id: number;
+  image: string;
+  agentName: string;
+  description: string;
+  time: string;
+  duration: string;
+  incoming: boolean;
+  segmentId: string;
+}
+
 @Component({
   selector: 'app-video-list-component',
   templateUrl: './video-list-component.component.html',
   styleUrl: './video-list-component.component.css'
 })
 export class VideoListComponentComponent {
-  videos: any[] = [
+  videos: Video[] = [
     { id: 1, agentName: 'Agent 1', image: '/assets/call.png', 
       description: 'Description of Call 1', segmentId: "e28531b5-7ebd-491f-88c4-6c26bad48d50",
-    time: "01-01-2023 08:49AM", duration: "1:09", incoming: false },
+    time: "01-01-2023 08:49AM", duration: "21:09", incoming: false },
     { id: 2, agentName: 'Agent 2', image: '/assets/call.png', 
       description: 'Description of Call 2', segmentId: "e28531b5-7ebd-491f-88c4-6c26bad48d50",
     time: "01-02-2023 04:49PM", duration: "3:22", incoming: true },
@@ -52,6 +63,23 @@ export class VideoListComponentComponent {
       (data) => this.videos = data,
       (error) => console.error('Error fetching videos:', error)
     );
+  }
+
+  sortByAttribute(attribute: keyof Video) {
+    this.videos.sort((a, b) => {
+      if (a[attribute] < b[attribute]) {
+        return -1;
+      } else if (a[attribute] > b[attribute]) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+  }
+
+  onSortChange(event: Event) {
+    const selectElement = event.target as HTMLSelectElement;
+    this.sortByAttribute(selectElement.value as keyof Video);
   }
 
   navigateToExternalLink(link: any) {

@@ -1,4 +1,16 @@
 <h2>Recommended calls:</h2>
+<div class="sort-container">
+  <label for="sort-attribute">Sort by: </label>
+  <select id="sort-attribute" (change)="onSortChange($event)">
+    <option value="agentName">Agent Name</option>
+    <option value="description">Description</option>
+    <option value="time">Time</option>
+    <option value="duration">Duration</option>
+    <option value="incoming">Incoming/Outgoing</option>
+    <!-- Add other necessary attributes here -->
+  </select>
+</div>
+
 <div class="video-list">
   <div class="video-card" *ngFor="let video of videos">
     <img [src]=video.image class="image"/>
