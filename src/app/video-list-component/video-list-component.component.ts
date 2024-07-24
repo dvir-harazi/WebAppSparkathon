@@ -58,6 +58,8 @@ export class VideoListComponentComponent {
   filteredVideos: Video[] = this.videos;
   filterText: string = '';
   selectedFilterAttribute: keyof Video = 'agentName';
+  showFilters = false;
+  imageSrc = '/assets/filter.jpg';
   
   constructor(private videoService: VideoServiceComponent,
     private router: Router
@@ -112,6 +114,10 @@ export class VideoListComponentComponent {
 
   navigateToExternalLink(link: any) {
     this.router.navigate(['/qma'], { queryParams: link });
+  }
+
+  onImageClick() {
+      this.showFilters = !this.showFilters;
   }
 }
 

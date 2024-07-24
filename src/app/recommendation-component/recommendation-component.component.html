@@ -1,7 +1,34 @@
 <h2>Did you reach your goal this week?</h2>
+<div>
+<h2>Total call time evaluated:</h2>
+<circle-progress
+  [percent]=hoursProgress1
+  [radius]="100"
+  [outerStrokeWidth]="18"
+  [innerStrokeWidth]="8"
+  [outerStrokeColor]="'#FF0000'"
+  [innerStrokeColor]="'#66b3ff'"
+  [animation]="true"
+  [animationDuration]="600"
+  [subtitle]="'Daily Goal'"
+  [subtitleFontSize]="'20'"
+></circle-progress>
 
 <circle-progress
-  [percent]=progress
+  [percent]=hoursProgress2
+  [radius]="100"
+  [outerStrokeWidth]="18"
+  [innerStrokeWidth]="8"
+  [outerStrokeColor]="'#32CD32'"
+  [innerStrokeColor]="'#66b3ff'"
+  [animation]="true"
+  [animationDuration]="600"
+  [subtitle]="'weekly Goal'"
+  [subtitleFontSize]="'20'"
+></circle-progress>
+
+<circle-progress
+  [percent]=hoursProgress3
   [radius]="100"
   [outerStrokeWidth]="18"
   [innerStrokeWidth]="8"
@@ -9,11 +36,50 @@
   [innerStrokeColor]="'#66b3ff'"
   [animation]="true"
   [animationDuration]="600"
+  [subtitle]="'Monthly Goal'"
+  [subtitleFontSize]="'20'"
 ></circle-progress>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-<h2>What should i do better?</h2>
-<div>You need to evalutate more calls to reach your goal.</div>
-<div>In order to do that, click on <b>Time Slot Management</b> button,</div>
-<div>And listen to more recommended calls.</div>
-<br/><br/>
+</div>
+<h2>Calls evaluated:</h2>
+<div>
+  <circle-progress
+    [percent]=callsProgress1
+    [radius]="100"
+    [outerStrokeWidth]="18"
+    [innerStrokeWidth]="8"
+    [outerStrokeColor]="'#FF0000'"
+    [innerStrokeColor]="'#66b3ff'"
+    [animation]="true"
+    [animationDuration]="600"
+    [subtitle]="'Daily Goal'"
+    [subtitleFontSize]="'20'"
+  ></circle-progress>
+  
+  <circle-progress
+    [percent]=callsProgress2
+    [radius]="100"
+    [outerStrokeWidth]="18"
+    [innerStrokeWidth]="8"
+    [outerStrokeColor]="'#007bff'"
+    [innerStrokeColor]="'#66b3ff'"
+    [animation]="true"
+    [animationDuration]="600"
+    [subtitle]="'weekly Goal'"
+    [subtitleFontSize]="'20'"
+  ></circle-progress>
+  
+  <circle-progress
+    [percent]=callsProgress3
+    [radius]="100"
+    [outerStrokeWidth]="18"
+    [innerStrokeWidth]="8"
+    [outerStrokeColor]="'#007bff'"
+    [innerStrokeColor]="'#66b3ff'"
+    [animation]="true"
+    [animationDuration]="600"
+    [subtitle]="'Monthly Goal'"
+    [subtitleFontSize]="'20'"
+  ></circle-progress>
+  </div>
+<hr color ="#0056b3">
 <app-leaderboard></app-leaderboard>

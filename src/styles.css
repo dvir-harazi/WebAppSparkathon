@@ -4,9 +4,6 @@ html, body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.sidenav-container {
-  height: 100%;
-}
 
 .mat-toolbar {
   background: #1976d2;

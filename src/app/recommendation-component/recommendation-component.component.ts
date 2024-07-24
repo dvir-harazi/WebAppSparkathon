@@ -14,5 +14,11 @@ export class RecommendationComponentComponent {
 
   constructor() { }
 
-  progress = 75;
+  hoursProgress1 = 25;
+  hoursProgress2 = 100;
+  hoursProgress3 = 62;
+
+  callsProgress1 = 15;
+  callsProgress2 = 77;
+  callsProgress3 = 42;
 }

@@ -1,0 +1,29 @@
+<form>
+    <mat-form-field appearance="fill">
+      <mat-label>Pick a date</mat-label>
+      <input matInput [matDatepicker]="datePicker" placeholder="Choose a date" [(ngModel)]="selectedDate" name="date">
+      <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
+      <mat-datepicker #datePicker></mat-datepicker>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Start time</mat-label>
+      <input matInput [ngxMatTimepicker]="picker" [(ngModel)]="startTime" name="startTime">
+      <ngx-mat-timepicker #picker></ngx-mat-timepicker>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>End time</mat-label>
+      <input matInput [ngxMatTimepicker]="picker2" [(ngModel)]="endTime" name="endTime">
+      <ngx-mat-timepicker #picker2></ngx-mat-timepicker>
+    </mat-form-field>
+  </form>
+  
+  <button (click)="onSubmit()">Save</button>
+  
+  <div>
+<div *ngFor="let timeslot of timeSlotList">
+<p>{{ timeslot.selectedDate }}, {{ timeslot.startTime}}, {{ timeslot.endTime}}</p>
+
+</div>
+  </div>

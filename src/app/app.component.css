@@ -19,7 +19,7 @@ body {
 .toolbar {
   padding: 16px;
   font-size: 18px;
-  background-color: #007bff;
+
   color: white;
 }
 
@@ -55,7 +55,7 @@ body {
 }
 
 .main-content .toolbar {
-  background-color: #007bff;
+
   color: white;
   padding: 16px;
   font-size: 18px;
@@ -64,4 +64,8 @@ body {
 .main-content .content {
   flex-grow: 1;
   padding: 16px;
+}
+
+.banner {
+  width: 100%;
 }

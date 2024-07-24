@@ -1,5 +1,8 @@
-circle-progress {
-    position: absolute;
-    width: 80%;
-    text-align: center;
+.circle-progress {
+    display: inline-flexbox;
+    width: 100%;
+}
+
+h2 {
+    color: #0056b3;
 }

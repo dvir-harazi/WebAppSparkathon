@@ -5,6 +5,13 @@
   padding: 16px;
 }
 
+.countdown {
+  display: inline;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px;
+}
+
 .video-card {
   background-color: #fff;
   border: 1px solid #ddd;
@@ -69,4 +76,14 @@ button {
 
 .filter-container {
   margin-bottom: 20px;
+}
+
+.filter {
+  width: 40px;
+  height: 40px;
+}
+
+h2 {
+  color: #0056b3;
+
 }

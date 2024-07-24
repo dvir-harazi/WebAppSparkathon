@@ -1,6 +1,10 @@
+<app-countdown-timer></app-countdown-timer>
 <h2>Recommended calls:</h2>
 
-<div class="filter-container">
+<img [src]="imageSrc" (click)="onImageClick()" class="filter" />
+
+<div *ngIf="showFilters" class="filter-container">
+  <br/>
   <label for="filter-attribute">Filter by: </label>
   <select id="filter-attribute" (change)="onFilterAttributeChange($event)">
     <option value="agentName"></option>
@@ -15,7 +19,7 @@
   <input id="filter-text" type="text" (input)="onFilterTextChange($event)" />
 </div>
 <p></p>
-<div class="sort-container">
+<div *ngIf="showFilters" class="sort-container">
   <label for="sort-attribute">Sort by: </label>
   <select id="sort-attribute" (change)="onSortChange($event)">
     <option value="agentName"></option>

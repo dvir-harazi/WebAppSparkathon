@@ -20,6 +20,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { TimeslotComponent } from './timeslot/timeslot.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {NgxMatTimepickerModule} from 'ngx-mat-timepicker';
+import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,9 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
     RecommendationComponentComponent,
     VideoServiceComponent,
     QmaComponent,
-    LeaderboardComponent
+    LeaderboardComponent,
+    TimeslotComponent,
+    CountdownTimerComponent
   ],
   imports: [
     BrowserModule,
@@ -44,8 +51,15 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
     MatFormFieldModule,
     MatInputModule,
     MatProgressBarModule,
-    BrowserAnimationsModule,
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatNativeDateModule,
+    BrowserAnimationsModule,
+    NgxMatTimepickerModule,
     NgCircleProgressModule.forRoot({
       // set defaults here
       radius: 100,

@@ -11,7 +11,7 @@
       <tbody>
         <tr *ngFor="let entry of entries; let i = index">
           <td>{{ i + 1 }}</td>
-          <td>{{ entry.name }}</td>
+          <td [ngClass]="{'highlight': entry.name === 'Adir Akhavan'}">{{ entry.name }}</td>
           <td>{{ entry.score }}</td>
         </tr>
       </tbody>
