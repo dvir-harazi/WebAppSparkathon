@@ -15,7 +15,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { QmaComponent } from './qma/qma.component';
-import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -28,8 +27,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     RatingComponentComponent,
     RecommendationComponentComponent,
     VideoServiceComponent,
-    QmaComponent,
-    ProgressBarComponent
+    QmaComponent
   ],
   imports: [
     BrowserModule,
