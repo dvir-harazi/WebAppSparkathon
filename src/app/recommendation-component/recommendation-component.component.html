@@ -1,16 +1,17 @@
-<h2>Get Recommendations</h2>
-<form (ngSubmit)="onSubmit()">
-  <label>Start Time:</label>
-  <input type="datetime-local" [(ngModel)]="startTime" name="startTime" required>
-  <label>End Time:</label>
-  <input type="datetime-local" [(ngModel)]="endTime" name="endTime" required>
-  <button type="submit">Get Recommendations</button>
-</form>
-<div *ngIf="recommendations.length > 0">
-  <h3>Recommended Videos:</h3>
-  <ul>
-    <li *ngFor="let rec of recommendations">
-      {{ rec.title }} ({{ rec.start_time }} - {{ rec.end_time }})
-    </li>
-  </ul>
-</div>
+<h2>Did you reach your goal this week?</h2>
+
+<circle-progress
+  [percent]=progress
+  [radius]="100"
+  [outerStrokeWidth]="18"
+  [innerStrokeWidth]="8"
+  [outerStrokeColor]="'#007bff'"
+  [innerStrokeColor]="'#66b3ff'"
+  [animation]="true"
+  [animationDuration]="600"
+></circle-progress>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<h2>What should i do better?</h2>
+<div>You need to evalutate more calls to reach your goal.</div>
+<div>In order to do that, click on <b>Time Slot Management</b> button,</div>
+<div>And listen to more recommended calls.</div>

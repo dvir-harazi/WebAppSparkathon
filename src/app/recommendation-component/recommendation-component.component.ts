@@ -1,24 +1,18 @@
 import { Component } from '@angular/core';
 import { VideoServiceComponent } from '../video-service/video-service.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
 @Component({
   selector: 'app-recommendation-component',
+  
   templateUrl: './recommendation-component.component.html',
   styleUrl: './recommendation-component.component.css'
 })
 export class RecommendationComponentComponent {
-  startTime: string = '';
-  endTime: string = '';
-  recommendations: any[] = [];
 
-  constructor(private videoService: VideoServiceComponent) { }
+  constructor() { }
 
-  onSubmit() {
-    // Hardcoded username for simplicity. In a real app, you'd get this from user authentication.
-    const username = 'testUser';
-    this.videoService.getRecommendations(username, this.startTime, this.endTime).subscribe(
-      (data) => this.recommendations = data.recommendations,
-      (error) => console.error('Error fetching recommendations:', error)
-    );
-  }
+  progress = 75;
 }

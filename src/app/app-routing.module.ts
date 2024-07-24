@@ -8,7 +8,6 @@ import { QmaComponent} from './qma/qma.component';
 const routes: Routes = [
   { path: '', redirectTo: '/calls', pathMatch: 'full' },
   { path: 'calls', component: VideoListComponentComponent },
-  { path: 'rate/:id', component: RatingComponentComponent },
   { path: 'recommend', component: RecommendationComponentComponent },
   { path: 'qma', component: QmaComponent },
 

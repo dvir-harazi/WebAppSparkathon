@@ -11,7 +11,7 @@ body {
 }
 
 .sidebar {
-  width: 250px;
+  width: 120px;
   background-color: #f4f4f4;
   border-right: 1px solid #ddd;
 }
@@ -38,6 +38,8 @@ body {
   padding: 16px;
   color: #007bff;
   text-decoration: none;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .nav-list li a.active,

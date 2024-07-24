@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VideoListComponentComponent } from './video-list-component/video-list-component.component';
@@ -16,6 +15,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { QmaComponent } from './qma/qma.component';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,8 @@ import { QmaComponent } from './qma/qma.component';
     RatingComponentComponent,
     RecommendationComponentComponent,
     VideoServiceComponent,
-    QmaComponent
+    QmaComponent,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,
@@ -37,9 +42,22 @@ import { QmaComponent } from './qma/qma.component';
     MatListModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatProgressBarModule,
+    BrowserAnimationsModule,
+    BrowserModule,
+    NgCircleProgressModule.forRoot({
+      // set defaults here
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300
+    })
+  
   ],
-  providers: [VideoServiceComponent],
+  providers: [VideoServiceComponent, provideAnimationsAsync()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
