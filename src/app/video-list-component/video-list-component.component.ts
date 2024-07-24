@@ -53,8 +53,6 @@ export class VideoListComponentComponent {
     time: "04-02-2024 04:49PM", duration: "2:59", direction: "incoming", rate: 7 },
   ];
 
-  baseurl = "https://na1.dev.nice-incontact.com/player/#/cxone-player/segments/";
-
   filteredVideos: Video[] = this.videos;
   filterText: string = '';
   selectedFilterAttribute: keyof Video = 'agentName';
@@ -111,11 +109,9 @@ export class VideoListComponentComponent {
     this.filterVideos();
   }
 
-
-  navigateToExternalLink(link: any) {
-    this.router.navigate(['/qma'], { queryParams: link });
+  navigateToExternalToQMA() {
+    this.router.navigate(['/qma']);
   }
-
   onImageClick() {
       this.showFilters = !this.showFilters;
   }

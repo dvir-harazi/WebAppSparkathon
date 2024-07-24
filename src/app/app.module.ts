@@ -25,6 +25,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {NgxMatTimepickerModule} from 'ngx-mat-timepicker';
 import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
+import { StarRatingComponent } from './star-rating/star-rating.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { CountdownTimerComponent } from './countdown-timer/countdown-timer.compo
     QmaComponent,
     LeaderboardComponent,
     TimeslotComponent,
-    CountdownTimerComponent
+    CountdownTimerComponent,
+    StarRatingComponent
   ],
   imports: [
     BrowserModule,

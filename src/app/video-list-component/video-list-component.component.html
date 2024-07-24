@@ -1,4 +1,3 @@
-<app-countdown-timer></app-countdown-timer>
 <h2>Recommended calls:</h2>
 
 <img [src]="imageSrc" (click)="onImageClick()" class="filter" />
@@ -42,7 +41,9 @@
     <p>{{ video.description }}</p>
     <p>{{ video.time }}</p>
     <p>Call Duration: {{ video.duration }}</p>
+    <div>
     <img class="incoming" [src]="video.direction === 'incoming' ? '/assets/incoming.jpg' : '/assets/outgoing.jpg'" />
-    <button (click)="navigateToExternalLink(video)">Play Call</button>
+      <button (click)="navigateToExternalToQMA()">Evaluate</button>
+    </div>
   </div>
 </div>

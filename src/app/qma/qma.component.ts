@@ -9,16 +9,8 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class QmaComponent implements OnInit {
   iframeUrl1: SafeResourceUrl | undefined;
-  iframeUrl2: SafeResourceUrl | undefined;
-  
-  baseurl = "https://na1.dev.nice-incontact.com/player/#/cxone-player/segments/";
-  urlWithSegmentId = '';
-  call = {
-    supervisorName: '',
-    comments: '',
-    futureReminder: '',
-    callRating: ''
-  };
+
+  baseurl = "https://na1.dev.nice-incontact.com/qm/admin/#/manageForms";
 
   constructor(private route: ActivatedRoute,
     private sanitizer: DomSanitizer
@@ -27,15 +19,17 @@ export class QmaComponent implements OnInit {
   ngOnInit(): void {
     
     this.route.queryParams.subscribe(params => {
-      this.urlWithSegmentId = this.baseurl + params['segmentId'];
-      this.iframeUrl1 = this.sanitizer.bypassSecurityTrustResourceUrl(this.urlWithSegmentId);
-      this.iframeUrl2 = this.sanitizer.bypassSecurityTrustResourceUrl(this.urlWithSegmentId);
+      this.iframeUrl1 = this.sanitizer.bypassSecurityTrustResourceUrl(this.baseurl);
     });
+  }
+  currentRating = 0;
+
+  onRatingUpdated(rating: number): void {
+    this.currentRating = rating;
   }
 
   onSubmit() {
-    console.log('Form submitted:', this.call);
-    // Add your form submission logic here
+   
   }
 
 }

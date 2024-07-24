@@ -1,0 +1,11 @@
+<div class="star-rating">
+    <ng-container *ngFor="let star of stars; index as i">
+      <i class="star"
+         [class.filled]="i < rating"
+         (click)="rate(i + 1)"
+         (mouseover)="setTempRating(i + 1)"
+         (mouseleave)="clearTempRating()">
+        ★
+      </i>
+    </ng-container>
+  </div>
